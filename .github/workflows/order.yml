@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Order Service
 
 on:
   push:
@@ -31,6 +31,8 @@ jobs:
     needs: [build]
 
     steps:
+    - uses: actions/checkout@v3
+
     - name: Lint Dockerfile
       uses: hadolint/hadolint-action@master
       with:
