@@ -4,7 +4,7 @@ COPY package* ./
 RUN npm ci
  
 FROM alpine:latest
-RUN apk --no-cache add nodejs ca-certificates
+RUN apk --no-cache add nodejs~=14.21
 WORKDIR /app
 COPY ./ ./
 COPY --from=builder /app ./
